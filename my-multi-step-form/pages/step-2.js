@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setStep, setDOB, setPhoneNumber } from '../redux/formSlice';
 import Link from 'next/link';
 import validator from 'validator';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const Step2Page = () => {
     const dispatch = useDispatch();
@@ -33,33 +35,45 @@ const Step2Page = () => {
 
       <form>
         <div className='form-group'>
-          <label>DOB</label>
+          {/* <label>DOB</label>
           <input
             type='date'
             value={dob}
             onChange={(e) => dispatch(setDOB(e.target.value))}
             required
-          />
+          /> */}
+          <TextField 
+            id="name" 
+            label="DOB" 
+            variant="standard" 
+            type='date'
+            value={dob}
+            InputLabelProps={{ shrink: true }}
+            onChange={(e) => dispatch(setDOB(e.target.value))}  margin="dense"/>
         </div>
         <div className='form-group'>
-          <label>Phone Number</label>
-          <input
+          {/* <label>Phone Number</label> */}
+          <TextField
+            label="Phone Number"
+            variant="standard"
+            type="tel"
             value={phoneNumber}
             maxLength={10}
             onChange={(e) => dispatch(setPhoneNumber(e.target.value))}
+            margin="dense"
             required
           />
         </div>
       </form>
       
-      <div>
+      <div className='text-right'>
         <Link href='/step-1'>
-          <button onClick={handlePrevious}>Previous</button>
+          <Button className='mr-1' variant="contained" onClick={handlePrevious}>Previous</Button>
         </Link>
         <Link href='/step-3'>
-          <button onClick={handleNext} disabled={!isValidStep2}>
+          <Button variant="contained" onClick={handleNext} disabled={!isValidStep2}>
             Next
-          </button>
+          </Button>
         </Link>
       </div>
     </div>

@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import { useDispatch } from 'react-redux';
 import { setStep } from '../redux/formSlice';
 import Link from 'next/link';
+import Button from '@mui/material/Button';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -18,9 +19,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <Link href="/step-1">
-            <button onClick={()=>{dispatch(setStep(1));}}>
+            <Button variant="contained" onClick={()=>{dispatch(setStep(1));}}>
             Enter
-            </button>
+            </Button>
         </Link>
       </main>
     </div>

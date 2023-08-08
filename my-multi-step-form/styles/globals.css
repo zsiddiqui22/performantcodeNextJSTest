@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
 html,
 body {
   padding: 0;
@@ -13,4 +19,21 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+.btn{
+  padding: 0.5rem 0.8rem;
+}
+
+.btn-primary{
+
+}
+
+.text-right{
+  text-align: right;
+}
+
+.mr-1{
+  margin-right: 1rem;
 }

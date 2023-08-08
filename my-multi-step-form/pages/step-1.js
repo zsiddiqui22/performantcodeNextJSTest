@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setStep, setName, setEmail } from '../redux/formSlice';
 import Link from 'next/link';
 import validator from 'validator';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const Step1 = () => {
   const dispatch = useDispatch();
@@ -38,20 +40,21 @@ const Step1 = () => {
 
       <form>
         <div className='form-group'>
-            <label>Name</label>
-            <input value={name} onChange={handleNameChange} required />
+            {/* <label>Name</label> */}
+            {/* <input className='px-4 py-3 rounded-full' value={name} onChange={handleNameChange} required /> */}
+            <TextField id="name" label="Name" variant="standard" value={name} onChange={handleNameChange}  margin="dense"/>
         </div>
         <div className='form-group'>
-            <label>Email</label>
-            <input value={email} onChange={handleEmailChange} required />
+            {/* <label>Email</label> */}
+            <TextField id="email" label="Email" variant="standard" value={email} onChange={handleEmailChange} required  margin="dense"/>
         </div>
       </form>
       
-      <div>
+      <div className='text-right'>
         <Link href="/step-2">
-            <button onClick={handleNext} disabled={!isValidStep1}>
+            <Button variant="contained" onClick={handleNext} disabled={!isValidStep1} margin="normal">
             Next
-            </button>
+            </Button>
         </Link>
       </div>
     </div>
