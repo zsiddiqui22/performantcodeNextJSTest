@@ -37,3 +37,36 @@ a {
 .mr-1{
   margin-right: 1rem;
 }
+
+/* components/ProgressIndicator.module.css */
+.progress-indicator {
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+}
+
+.step.active {
+  color: #000;
+  font-weight: bold;
+}

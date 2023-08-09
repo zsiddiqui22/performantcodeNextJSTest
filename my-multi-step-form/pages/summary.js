@@ -1,9 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchFormData } from '../redux/formSlice';
 import { useEffect } from 'react';
+import ProgressIndicator from '../components/ProgressIndicator';
 
 const SummaryPage = () => {
   const dispatch = useDispatch();
+
+  const currentStep = 4;
+  const totalSteps = 4;
 
   // Dispatch the fetchFormData action to get the form data from Redux store
   useEffect(()=>{
@@ -14,6 +18,8 @@ const SummaryPage = () => {
 
   return (
     <div style={{ padding: '10px 30px' }}>
+      <ProgressIndicator currentStep={currentStep} totalSteps={totalSteps} />
+
       <h1>Summary</h1>
       {/* Display the collected user information */}
       <p>

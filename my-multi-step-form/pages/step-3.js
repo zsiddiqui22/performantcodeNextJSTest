@@ -12,10 +12,14 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import ProgressIndicator from '../components/ProgressIndicator';
 
 const Step3Page = () => {
     const dispatch = useDispatch();
     const { subscriptionPlan } = useSelector((state) => state.form);
+
+    const currentStep = 3;
+    const totalSteps = 4;
   
     const handleNext = () => {
       // Add form validation logic here
@@ -34,8 +38,10 @@ const Step3Page = () => {
 
   return (
     <div style={{padding:'10px 30px'}}>
-      <h1>Step 3</h1>
+      <ProgressIndicator currentStep={currentStep} totalSteps={totalSteps} />
 
+      <h1>Step 3</h1>
+      
 
       <form>
         <div className='form-group'>

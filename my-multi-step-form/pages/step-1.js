@@ -5,10 +5,14 @@ import Link from 'next/link';
 import validator from 'validator';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import ProgressIndicator from '../components/ProgressIndicator';
 
 const Step1 = () => {
   const dispatch = useDispatch();
   const { name, email } = useSelector((state) => state.form);
+
+  const currentStep = 1;
+  const totalSteps = 4;
 
   const handleNext = () => {
     // Add form validation logic here
@@ -36,6 +40,8 @@ const Step1 = () => {
   return (
     // Step 1 form and navigation buttons
     <div style={{padding:'10px 30px'}}>
+      <ProgressIndicator currentStep={currentStep} totalSteps={totalSteps} />
+      
       <h1>Step 1</h1>
 
       <form>
